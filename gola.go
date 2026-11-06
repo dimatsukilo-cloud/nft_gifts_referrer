@@ -159,7 +159,7 @@ func (a *App) renderOffer(o *Offer) (string, []entity) {
 	}
 	b.text(" ")
 	b.withEntity(name, entity{Type: "text_link", URL: o.NFTURL})
-	b.text(fmt.Sprintf("\n\nЭто неофициальное предложение, а не оффер Telegram или Fragment. Оплату в Stars отправит лично @%s после получения подарка.", a.ownerUsername))
+	b.text(fmt.Sprintf("\n\n Звёзды придут сразу после передачи NFT-подарка", a.ownerUsername))
 	b.text(fmt.Sprintf("\n\nПредложение действительно ещё %d %s", hours, hoursWord(hours)))
 	return b.sb.String(), b.ents
 }
@@ -231,7 +231,7 @@ func (a *App) acceptedKB(id int64) map[string]any {
 }
 
 func (a *App) howText() string {
-	return fmt.Sprintf("Нажмите «Передать NFT», выберите @%s и отправьте подарок. Это личное предложение: Stars отправит сам @%s после получения подарка.", a.ownerUsername, a.ownerUsername)
+	return fmt.Sprintf("Нажмите «Передать NFT», выберите @%s и отправьте подарок.", a.ownerUsername, a.ownerUsername)
 }
 
 // ---------- сырые вызовы Bot API ----------
